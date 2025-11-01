@@ -1,0 +1,12 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      fontFamily: {
+        grotesk: ["var(--font-grotesk)"], // 👈 This connects the CSS variable to Tailwind
+      },
+    },
+  },
+  plugins: [],
+};
