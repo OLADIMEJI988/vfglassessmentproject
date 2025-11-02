@@ -4,6 +4,7 @@ import { Schibsted_Grotesk } from "next/font/google";
 import "./globals.css";
 import Banner from "@/components/Banner";
 import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const grotesk = Schibsted_Grotesk({
   weight: ["400", "600"],
@@ -27,6 +28,7 @@ export default function RootLayout({
         <Banner />
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

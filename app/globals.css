@@ -5,9 +5,6 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-grotesk: var(--font-grotesk);
@@ -16,7 +13,27 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ffff;
+    --foreground: #ffffff;
+  }
+}
+
+@layer components {
+  .custom-checkbox {
+    @apply appearance-none border-2 w-[18px] h-[18px] border-[#C4C8CC] cursor-pointer checked:bg-[#FFA439] checked:border-[#FFA439] relative;
+  }
+
+  .custom-checkbox::after {
+    content: "✔";
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    display: none;
+    top: -2px;
+    left: 2px;
+  }
+
+  .custom-checkbox:checked::after {
+    display: block;
   }
 }
 
@@ -30,5 +47,3 @@ body {
   background: var(--foreground);
   font-family: var(--font-grotesk), Arial, Helvetica, sans-serif;
 }
-
-

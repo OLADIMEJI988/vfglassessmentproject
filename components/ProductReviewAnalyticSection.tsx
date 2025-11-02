@@ -3,7 +3,7 @@
 import Image from "next/image";
 import ProductRating from "./ProductRating";
 
-export default function ProductReviewSection() {
+export default function ProductReviewAnalyticSection() {
   return (
     <div>
       <p className="font-semibold">Product Reviews</p>

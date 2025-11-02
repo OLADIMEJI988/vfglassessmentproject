@@ -1,15 +1,17 @@
 "use client";
 
+import PopularProductSection from "@/components/PopularProductSection";
 import ProductImages from "@/components/ProductImages";
-import ProductReviewSection from "@/components/ProductReviewSection";
+import ProductReviewAnalyticSection from "@/components/ProductReviewAnalyticSection";
 import RelatedProductSection from "@/components/RelatedProductSection";
 import ReviewFilter from "@/components/ReviewFilter";
+import ReviewListSection from "@/components/ReviewListSection";
 import Image from "next/image";
 
 export default function Home() {
   return (
     <>
-      <div className="mx-16">
+      <div className="mx-12 pb-[80px]">
         <div className="flex items-center gap-2 text-[15px] text-[#8F8F8F]">
           <p>Homepage</p>
           <Image
@@ -162,7 +164,7 @@ export default function Home() {
 
         <RelatedProductSection />
 
-         <Image
+        <Image
           className="w-full my-[80px]"
           src="/dottedline.svg"
           alt="dottedline"
@@ -171,11 +173,23 @@ export default function Home() {
           priority
         />
 
-        <ProductReviewSection />
+        <ProductReviewAnalyticSection />
 
-        <div className="flex">
+        <div className="flex gap-[40px]">
           <ReviewFilter />
+          <ReviewListSection />
         </div>
+
+        <Image
+          className="w-full my-[80px]"
+          src="/dottedline.svg"
+          alt="dottedline"
+          width={30}
+          height={20}
+          priority
+        />
+
+        <PopularProductSection />
       </div>
     </>
   );

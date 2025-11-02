@@ -3,11 +3,11 @@
 import RelatedProduct from "./RelatedProduct";
 
 
-export default function RelatedProductSection() {
+export default function PopularProductSection() {
   return (
     <div>
         <div className="flex items-center justify-between">
-            <p className="text-[#141414] text-[25px] font-semibold">Related Product</p>
+            <p className="text-[#141414] text-[25px] font-semibold">Popular this week</p>
             <p className="text-[#525252] text-[15px] underline">View All</p>
         </div>
 

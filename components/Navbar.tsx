@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <div className="mx-16">
+    <div className="mx-12">
       <div className="w-full mt-[31px] flex justify-between">
         <Image
           className="w-[170px]"
