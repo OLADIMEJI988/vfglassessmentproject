@@ -4,84 +4,53 @@ import Image from "next/image";
 
 export default function Navbar() {
   return (
-    <div className="mx-12">
-      <div className="w-full mt-[31px] flex justify-between">
-        <Image
-          className="w-[170px]"
-          src="/logo.svg"
-          alt="banner"
-          width={30}
-          height={20}
-          priority
-        />
-
-        <div className="flex gap-8 items-center">
-          <Image
-            className="w-[20px] cursor-pointer"
-            src="/searchicon.svg"
-            alt="banner"
-            width={30}
-            height={20}
-            priority
-          />
-
-          <div className="text-[14px] flex gap-1 cursor-pointer">
-            <p>Categories</p>
+    <>
+      <div className="max-lg:mb-6">
+        <div className="flex items-center gap-2 text-[15px] max-lg:text-[13px] text-[#8F8F8F] px-[5%] max-lg:px-[12px]">
+          <div className="flex items-center gap-2">
+            <p>Homepage</p>
             <Image
-              className="w-[10px]"
-              src="/arrowdn.svg"
+              className="w-[12px] my-[31px]"
+              src="/arrowright.svg"
               alt="banner"
-              width={30}
-              height={20}
+              width={15}
+              height={15}
               priority
             />
           </div>
 
-          <div className="text-[14px] flex gap-1 cursor-pointer">
+          <div className="flex items-center gap-2">
+            <p>Women</p>
             <Image
-              className="w-[20px]"
-              src="/usericon.svg"
+              className="w-[12px] my-[31px]"
+              src="/arrowright.svg"
               alt="banner"
-              width={30}
-              height={20}
+              width={15}
+              height={15}
               priority
             />
-            <p>Sign in</p>
           </div>
 
-          <Image
-            className="w-[20px] cursor-pointer"
-            src="/heart.svg"
-            alt="banner"
-            width={30}
-            height={20}
-            priority
-          />
-
-          <div className="cursor-pointer relative">
+          <div className="flex items-center gap-2">
+            <p>Women's Shirts & Tops</p>
             <Image
-              className="w-[20px]"
-              src="/carticon.svg"
-              alt="cart icon"
-              width={30}
-              height={20}
+              className="w-[12px] my-[31px]"
+              src="/arrowright.svg"
+              alt="banner"
+              width={15}
+              height={15}
               priority
             />
-            <div className="absolute -top-[9px] -right-[7px] bg-[#141414] text-white text-[11px] w-[18px] h-[18px] flex items-center justify-center rounded-full">
-              1
-            </div>
           </div>
+
+          <p className="text-[#292929] max-lg:hidden">
+            Long Sleeve Overshirt, Khaki, 6
+          </p>
         </div>
+        <p className="text-[#292929] text-[13px] pl-[12px] -mt-[17px] lg:hidden">
+          Long Sleeve Overshirt, Khaki, 6
+        </p>
       </div>
-
-      <Image
-        className="w-full mt-[31px]"
-        src="/dottedline.svg"
-        alt="banner"
-        width={30}
-        height={20}
-        priority
-      />
-    </div>
+    </>
   );
 }

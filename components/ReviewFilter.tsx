@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ReviewFilter() {
   return (
-    <div className="flex w-[32%] h-[640px]">
+    <div className="flex max-lg:flex-col w-[32%] max-lg:w-full h-[640px]">
       <div className="border mb-20 rounded-[8px] p-6">
         {/* <svg width="290" height="100" className="mb-20">
           <rect

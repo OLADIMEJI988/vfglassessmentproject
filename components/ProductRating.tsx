@@ -21,7 +21,7 @@ export default function ProductRating({ rating, img, ratingnum }: RatingProps) {
         priority
       />
       <Image
-        className="w-full mx-[24px]"
+        className="w-full max-lg:min-w-[201px] mx-[24px]"
         src={img}
         alt="banner"
         width={70}

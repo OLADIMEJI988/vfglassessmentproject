@@ -4,9 +4,9 @@ import Image from "next/image";
 
 export default function ProductImages() {
   return (
-    <div className="flex gap-[35px] mr-[15px]">
-      <div className="flex flex-col">
-        <div className="w-[429px] bg-[#EBEBEB] rounded-md">
+    <div className="flex gap-[35px] max-lg:gap-[12px] mr-[15px] max-lg:mr-0">
+      <div className="flex flex-col max-lg:w-full">
+        <div className="w-[429px] max-lg:w-full bg-[#EBEBEB] rounded-md">
           <Image
             className="w-full"
             src="/mainprodimg.svg"
@@ -17,7 +17,7 @@ export default function ProductImages() {
           />
         </div>
 
-        <div className="w-[70px] h-[100px] mt-6">
+        <div className="w-[70px] max-lg:w-[55px] h-[100px] mt-6">
           <div className="flex gap-5">
             <Image
               className="w-full bg-[#EBEBEB] rounded-md"

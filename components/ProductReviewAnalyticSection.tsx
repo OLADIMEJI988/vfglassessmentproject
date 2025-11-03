@@ -5,8 +5,8 @@ import ProductRating from "./ProductRating";
 
 export default function ProductReviewAnalyticSection() {
   return (
-    <div>
-      <p className="font-semibold">Product Reviews</p>
+    <div className="max-lg:w-full">
+      <p className="font-semibold text-2xl max-lg:text-[23px]">Product Reviews</p>
       <div>
         {/* <svg width="300" height="100" className="mb-20 w-full">
           <rect
@@ -21,8 +21,8 @@ export default function ProductReviewAnalyticSection() {
             strokeDasharray="6,5"
           />
         </svg> */}
-        <div className="flex justify-between mb-10 mt-3">
-          <div className="flex -mt-[92px]">
+        <div className="flex max-lg:flex-col justify-between mb-10 mt-3">
+          <div className="flex -mt-[92px] max-lg:mt-[9px] max-lg:mb-5">
             <div className="flex items-center font-semibold text-[17px]">
               <Image
                 className="w-[75px]"

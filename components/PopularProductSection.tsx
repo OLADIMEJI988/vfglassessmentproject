@@ -11,7 +11,7 @@ export default function PopularProductSection() {
             <p className="text-[#525252] text-[15px] underline">View All</p>
         </div>
 
-        <div className="flex gap-[35px] mt-6">
+        <div className="flex max-lg:flex-col gap-[35px] mt-6">
             <RelatedProduct img="/whistle.svg" productname="Whistle" productprice="$26" productdetail="Wide Leg Cropped Jeans, Denim" numsold="1,238" />
             <RelatedProduct img="/anyday1.svg" productname="John Lewis ANYDAY" productprice="$26" productdetail="Long Sleeve Utility Shirt, Navy, 6" numsold="1,238" />
             <RelatedProduct img="/anyday2.svg" productname="John Lewis ANYDAY" productprice="$32" productdetail="Stripe Curved Hem Shirt, Blue" numsold="620" />
