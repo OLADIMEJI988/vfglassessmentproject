@@ -16,17 +16,23 @@ interface Product {
 export default function PopularProductSection() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     async function fetchProducts() {
       try {
-        const res = await fetch(
-          `/api/products`
-        );
+        const res = await fetch(`/.netlify/functions/products`);
         const data = await res.json();
-        setProducts(data.products || data || []);
-      } catch (err) {
+
+        if (!res.ok) {
+          throw new Error(data.error || "Failed to fetch products");
+        }
+
+        setProducts(data.products || []);
+      } catch (err: any) {
         console.error("Error fetching popular products:", err);
+        setError(err.message || "Unknown error");
+        setProducts([]);
       } finally {
         setLoading(false);
       }
@@ -52,25 +58,23 @@ export default function PopularProductSection() {
             <RelatedProductSkeleton key={i} />
           ))}
         </div>
+      ) : error ? (
+        <p className="text-red-500 mt-4">Failed to load products: {error}</p>
+      ) : products.length === 0 ? (
+        <p className="text-gray-500 mt-4">No popular products found.</p>
       ) : (
         <div className="flex max-lg:grid max-lg:grid-cols-2 gap-[35px] max-lg:gap-[20px] mt-6 max-lg:mt-10">
-          {products.length > 0 ? (
-            products.map((product, index) => (
-              <RelatedProduct
-                key={index}
-                img={product.image || "/anyday1.svg"}
-                productname={product.name}
-                productprice={`$${product.price}`}
-                productstock={`${product.stock}`}
-                productdetail={
-                  product.description || "Long Sleeve Utility Shirt, Navy, 6"
-                }
-                numsold={product.numSold?.toLocaleString() || "1,238"}
-              />
-            ))
-          ) : (
-            <p className="text-gray-500">No popular products found.</p>
-          )}
+          {products.map((product, index) => (
+            <RelatedProduct
+              key={index}
+              img={product.image || "/anyday1.svg"}
+              productname={product.name || "Unnamed Product"}
+              productprice={`$${product.price ?? 0}`}
+              productstock={`${product.stock ?? 0}`}
+              productdetail={product.description || "No description available"}
+              numsold={product.numSold?.toLocaleString() || "0"}
+            />
+          ))}
         </div>
       )}
     </div>
