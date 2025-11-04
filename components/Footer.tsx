@@ -80,9 +80,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex max-lg:flex-col gap-28">
+        <div className="flex max-lg:flex-col max-lg:grid max-lg:grid-cols-2 max-lg:mt-[48px] gap-28 max-lg:gap-5">
           <div>
-            <p className="font-semibold mb-4">Shop</p>
+            <p className="font-semibold mb-4 max-lg:text-[18px]">Shop</p>
             <div className="flex flex-col gap-3">
               <p className="cursor-pointer">My account</p>
               <p className="cursor-pointer">Login</p>
@@ -92,7 +92,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="font-semibold mb-4">Information</p>
+            <p className="font-semibold mb-4 max-lg:text-[18px]">Information</p>
             <div className="flex flex-col gap-3">
               <p className="cursor-pointer">Shipping Policy</p>
               <p className="cursor-pointer">Returns & Refunds</p>
@@ -102,7 +102,9 @@ export default function Footer() {
           </div>
 
           <div>
-            <p className="font-semibold mb-4">Company</p>
+            <p className="font-semibold mb-4 max-lg:text-[18px] max-lg:mt-5">
+              Company
+            </p>
             <div className="flex flex-col gap-3">
               <p className="cursor-pointer">About us</p>
               <p className="cursor-pointer">Privacy Policy</p>
@@ -115,7 +117,7 @@ export default function Footer() {
 
       <div className="pb-6">
         <Image
-          className="w-full"
+          className="w-full mb-[80px] max-lg:hidden"
           src="/dottedline.svg"
           alt="dottedline"
           width={30}
@@ -123,11 +125,20 @@ export default function Footer() {
           priority
         />
 
-        <div className="flex justify-between mt-6">
-          <p className="text-[#3E3E59] text-[14px]">
+        <Image
+          className="w-full -mt-[45px] lg:hidden"
+          src="/mobiledivider.svg"
+          alt="dottedline"
+          width={30}
+          height={20}
+          priority
+        />
+
+        <div className="flex justify-between mt-6 max-lg:mt-[25px] max-lg:w-full">
+          <p className="text-[#3E3E59] text-[14px] max-lg:w-full">
             © John Lewis plc 2001 - 2024
           </p>
-          <div className="flex gap-8 text-[14px] text-[#121212] font-semibold">
+          <div className="flex gap-8 text-[14px] max-lg:mt-10 max-lg:-ml-24 text-[#121212] font-semibold">
             <div className="flex gap-1 items-center">
               <Image
                 className="w-[18px] mr-1"

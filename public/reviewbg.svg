@@ -1,0 +1,14 @@
+<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <rect
+    x="5"
+    y="5"
+    width="calc(100% - 10px)"
+    height="calc(100% - 10px)"
+    fill="none"
+    stroke="#B8B8B8"
+    stroke-width="0.3"
+    stroke-dasharray="6,5"
+    rx="8"
+    ry="8"
+  />
+</svg>

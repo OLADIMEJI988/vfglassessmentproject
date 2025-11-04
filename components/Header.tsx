@@ -71,13 +71,31 @@ export default function Header() {
               1
             </div>
           </div>
+
+          <Image
+            className="w-[20px] cursor-pointer lg:hidden"
+            src="/hamburger.svg"
+            alt="banner"
+            width={30}
+            height={20}
+            priority
+          />
         </div>
       </div>
 
       <Image
-        className="w-full mt-[31px]"
+        className="w-full mt-[31px] max-lg:hidden"
         src="/dottedline.svg"
-        alt="banner"
+        alt="dottedline"
+        width={30}
+        height={20}
+        priority
+      />
+
+      <Image
+        className="w-full mt-[31px] lg:hidden"
+        src="/mobiledivider.svg"
+        alt="dottedline"
         width={30}
         height={20}
         priority

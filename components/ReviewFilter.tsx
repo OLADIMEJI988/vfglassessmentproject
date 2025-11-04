@@ -4,20 +4,10 @@ import Image from "next/image";
 
 export default function ReviewFilter() {
   return (
-    <div className="flex max-lg:flex-col w-[32%] max-lg:w-full h-[640px]">
-      <div className="border mb-20 rounded-[8px] p-6">
-        {/* <svg width="290" height="100" className="mb-20">
-          <rect
-            x="5"
-            y="5"
-            width="280px"
-            height="90"
-            fill="none"
-            stroke="#B8B8B8"
-            strokeWidth="0.3"
-            strokeDasharray="6,5"
-          />
-        </svg> */}
+    <div className="flex max-lg:flex-col w-[35%] h-[640px] max-lg:hidden">
+      <div
+        className="p-6 mb-20 bg-[url('/filterbg.svg')] bg-no-repeat bg-cover rounded-[8px]"
+      >
         <p className="text-[#292929] text-[20px] font-semibold">
           Reviews Filter
         </p>
@@ -46,70 +36,20 @@ export default function ReviewFilter() {
         </div>
 
         <div className="mt-3 flex flex-col gap-3">
-          <div className="flex items-center">
-            <input type="checkbox" className="custom-checkbox" />
-            <Image
-              className="w-[12px] ml-2 mr-1"
-              src="/star.svg"
-              alt="banner"
-              width={20}
-              height={20}
-              priority
-            />
-            <p className="text-[#818B9C] font-semibold">5</p>
-          </div>
-
-          <div className="flex items-center">
-            <input type="checkbox" className="custom-checkbox" />
-            <Image
-              className="w-[12px] ml-2 mr-1"
-              src="/star.svg"
-              alt="banner"
-              width={20}
-              height={20}
-              priority
-            />
-            <p className="text-[#818B9C] font-semibold">4</p>
-          </div>
-
-          <div className="flex items-center">
-            <input type="checkbox" className="custom-checkbox" />
-            <Image
-              className="w-[12px] ml-2 mr-1"
-              src="/star.svg"
-              alt="banner"
-              width={20}
-              height={20}
-              priority
-            />
-            <p className="text-[#818B9C] font-semibold">3</p>
-          </div>
-
-          <div className="flex items-center">
-            <input type="checkbox" className="custom-checkbox" />
-            <Image
-              className="w-[12px] ml-2 mr-1"
-              src="/star.svg"
-              alt="banner"
-              width={20}
-              height={20}
-              priority
-            />
-            <p className="text-[#818B9C] font-semibold">2</p>
-          </div>
-
-          <div className="flex items-center">
-            <input type="checkbox" className="custom-checkbox" />
-            <Image
-              className="w-[12px] ml-2 mr-1"
-              src="/star.svg"
-              alt="banner"
-              width={20}
-              height={20}
-              priority
-            />
-            <p className="text-[#818B9C] font-semibold">1</p>
-          </div>
+          {[5, 4, 3, 2, 1].map((num) => (
+            <div key={num} className="flex items-center">
+              <input type="checkbox" className="custom-checkbox" />
+              <Image
+                className="w-[12px] ml-2 mr-1"
+                src="/star.svg"
+                alt="star"
+                width={20}
+                height={20}
+                priority
+              />
+              <p className="text-[#818B9C] font-semibold">{num}</p>
+            </div>
+          ))}
         </div>
 
         <Image
@@ -136,32 +76,19 @@ export default function ReviewFilter() {
         </div>
 
         <div className="mt-3 flex flex-col gap-3">
-          <div className="flex items-center gap-2">
-            <input type="checkbox" className="custom-checkbox" />
-            <p className="text-[#818B9C] font-semibold">Product Quality</p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <input type="checkbox" className="custom-checkbox" />
-            <p className="text-[#818B9C] font-semibold">Seller Services</p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <input type="checkbox" className="custom-checkbox" />
-            <p className="text-[#818B9C] font-semibold">Product Price</p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <input type="checkbox" className="custom-checkbox" />
-            <p className="text-[#818B9C] font-semibold">Shipment</p>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <input type="checkbox" className="custom-checkbox" />
-            <p className="text-[#818B9C] font-semibold">Match with Description</p>
-          </div>
+          {[
+            "Product Quality",
+            "Seller Services",
+            "Product Price",
+            "Shipment",
+            "Match with Description",
+          ].map((topic) => (
+            <div key={topic} className="flex items-center gap-2">
+              <input type="checkbox" className="custom-checkbox" />
+              <p className="text-[#818B9C] font-semibold">{topic}</p>
+            </div>
+          ))}
         </div>
-
       </div>
     </div>
   );

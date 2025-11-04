@@ -7,16 +7,16 @@ export default function ReviewListSection() {
   return (
     <div className="w-full">
       <p className="font-semibold text-[#292929] text-[20px]">Review Lists</p>
-      <div className="flex gap-3 mt-4">
-        <div className="bg-[#EBEBEB] border border-[#333333] rounded-[8px] text-[#141414] py-[10px] px-5 font-semibold cursor-pointer">
+      <div className="flex gap-3 mt-4 max-lg:text-[12px]">
+        <div className="bg-[#EBEBEB] border border-[#333333] rounded-[8px] text-[#141414] py-[10px] px-5 max-lg:px-2 font-semibold cursor-pointer">
           <p>All Reviews</p>
         </div>
 
-        <div className="bg-transparent border border-[#E6E6E6] rounded-[8px] text-[#141414] py-[10px] px-4 font-semibold cursor-pointer">
+        <div className="bg-transparent border border-[#E6E6E6] rounded-[8px] text-[#141414] py-[10px] px-4 max-lg:px-2 font-semibold cursor-pointer">
           <p>With Photo & Video</p>
         </div>
 
-        <div className="bg-transparent border border-[#E6E6E6] rounded-[8px] text-[#141414] py-[10px] px-4 font-semibold cursor-pointer">
+        <div className="bg-transparent border border-[#E6E6E6] rounded-[8px] text-[#141414] py-[10px] px-4 max-lg:px-2 font-semibold cursor-pointer">
           <p>With Description</p>
         </div>
       </div>

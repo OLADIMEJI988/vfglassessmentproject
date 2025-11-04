@@ -1,0 +1,15 @@
+<svg width="320" height="640" xmlns="http://www.w3.org/2000/svg">
+  <rect
+    x="5"
+    y="5"
+    width="310"
+    height="632"
+    rx="8"
+    ry="8"
+    fill="white"
+    stroke="#B8B8B8"
+    stroke-width="0.3"
+    stroke-dasharray="6 5"
+  />
+</svg>
+

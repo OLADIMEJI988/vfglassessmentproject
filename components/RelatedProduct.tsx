@@ -2,18 +2,25 @@
 
 import Image from "next/image";
 
-
 interface RelatedProductProps {
   img: string;
   productname: string;
   productprice: string;
+  productstock: string;
   productdetail: string;
   numsold: string;
 }
 
-export default function RelatedProduct({ img, productname, productprice, productdetail, numsold }: RelatedProductProps) {
+export default function RelatedProduct({
+  img,
+  productname,
+  productprice,
+  productstock,
+  productdetail,
+  numsold,
+}: RelatedProductProps) {
   return (
-    <div className="w-full max-lg:mb-8">
+    <div className="w-full max-lg:mb-7">
       <Image
         className="w-full bg-[#F2F2F2] rounded-[8px]"
         src={img}
@@ -27,7 +34,16 @@ export default function RelatedProduct({ img, productname, productprice, product
         <p className="text-[17px] max-lg:text-[15px] font-semibold text-[#292929] tracking-tight">
           {productname}
         </p>
-        <p className="text-[17px] max-lg:text-[15px] font-semibold text-[#292929] mt-1">{productprice}</p>
+        <div className="flex items-center">
+          <p className="text-[17px] max-lg:text-[15px] font-semibold text-[#292929] mt-1">
+            {productprice}
+          </p>
+          <div className="bg-[#E0E0E0] w-[6px] h-[6px] rounded-full mx-2"></div>
+          <p className="text-[15px] max-lg:text-[12px] text-[#292929] mt-1">
+            {productstock} in stock
+          </p>
+        </div>
+
         <p className="text-[15px] max-lg:text-[14px] font-light my-2 text-[#7A7A7A]">
           {productdetail}
         </p>
@@ -43,7 +59,9 @@ export default function RelatedProduct({ img, productname, productprice, product
 
           <p className="max-lg:text-[14px]">4.8</p>
           <div className="bg-[#E0E0E0] w-[6px] h-[6px] rounded-full mx-2"></div>
-          <p className="text-[#666666] max-lg:text-[12px]">{numsold} <span>Sold</span></p>
+          <p className="text-[#666666] max-lg:text-[12px]">
+            {numsold} <span>Sold</span>
+          </p>
         </div>
       </div>
     </div>

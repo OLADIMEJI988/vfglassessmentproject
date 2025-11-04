@@ -36,7 +36,7 @@ export default function Home() {
           priority
         />
 
-        <RelatedProductSection />
+        <RelatedProductSection category="electronics" />
 
         <Image
           className="w-full my-[80px] max-lg:hidden"

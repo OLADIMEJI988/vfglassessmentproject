@@ -10,7 +10,7 @@ interface RatingProps {
 
 export default function ProductRating({ rating, img, ratingnum }: RatingProps) {
   return (
-    <div className="flex text-[#0B0F0E] items-center font-semibold">
+    <div className="flex text-[#0B0F0E] items-center font-semibold max-lg:text-[14px]">
       <p>{rating}</p>
       <Image
         className="w-[20px] ml-2"
