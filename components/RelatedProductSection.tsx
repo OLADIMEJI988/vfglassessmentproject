@@ -21,7 +21,7 @@ export default function RelatedProductSection() {
     async function fetchProducts() {
       try {
         const res = await fetch(
-          `https://frontendcodingtest-production.up.railway.app/api/products`
+          `/api/products`
         );
         const data = await res.json();
         setProducts(data.products || data || []);
