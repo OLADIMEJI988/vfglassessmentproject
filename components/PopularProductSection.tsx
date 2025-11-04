@@ -1,59 +1,78 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import RelatedProduct from "./RelatedProduct";
+import RelatedProductSkeleton from "./RelatedProductSkeleton";
+
+interface Product {
+  image: string;
+  name: string;
+  price: number;
+  stock: number;
+  description: string;
+  numSold: number;
+}
 
 export default function PopularProductSection() {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchProducts() {
+      try {
+        const res = await fetch(
+          `https://frontendcodingtest-production.up.railway.app/api/products`
+        );
+        const data = await res.json();
+        setProducts(data.products || data || []);
+      } catch (err) {
+        console.error("Error fetching popular products:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchProducts();
+  }, []);
+
   return (
     <div>
       <div className="flex max-lg:w-full items-center justify-between">
         <p className="text-[#141414] text-[25px] max-lg:text-[23px] font-semibold">
           Popular this week
         </p>
-        <p className="text-[#525252] text-[15px] underline">View All</p>
+        <p className="text-[#525252] text-[15px] underline cursor-pointer">
+          View All
+        </p>
       </div>
 
-      <div className="flex max-lg:grid max-lg:grid-cols-2 gap-[35px] max-lg:gap-[20px] mt-6 max-lg:mt-10">
-        <RelatedProduct
-          img="/whistle.svg"
-          productname="Whistle"
-          productprice="$26"
-          productstock="210"
-          productdetail="Wide Leg Cropped Jeans, Denim"
-          numsold="1,238"
-        />
-        <RelatedProduct
-          img="/anyday1.svg"
-          productname="John Lewis ANYDAY"
-          productprice="$26"
-          productstock="210"
-          productdetail="Long Sleeve Utility Shirt, Navy, 6"
-          numsold="1,238"
-        />
-        <RelatedProduct
-          img="/anyday2.svg"
-          productname="John Lewis ANYDAY"
-          productprice="$32"
-          productstock="210"
-          productdetail="Stripe Curved Hem Shirt, Blue"
-          numsold="620"
-        />
-        <RelatedProduct
-          img="/anyday3.svg"
-          productname="John Lewis ANYDAY"
-          productprice="$40"
-          productstock="210"
-          productdetail="Denim Overshirt, Mid Wash"
-          numsold="238"
-        />
-        <RelatedProduct
-          img="/anyday4.svg"
-          productname="John Lewis"
-          productprice="$79"
-          productstock="210"
-          productdetail="Linen Blazer, Navy"
-          numsold="1,238"
-        />
-      </div>
+      {loading ? (
+        <div className="flex max-lg:grid max-lg:grid-cols-2 gap-[35px] max-lg:gap-[20px] mt-6 max-lg:mt-10">
+          {[...Array(4)].map((_, i) => (
+            <RelatedProductSkeleton key={i} />
+          ))}
+        </div>
+      ) : (
+        <div className="flex max-lg:grid max-lg:grid-cols-2 gap-[35px] max-lg:gap-[20px] mt-6 max-lg:mt-10">
+          {products.length > 0 ? (
+            products.map((product, index) => (
+              <RelatedProduct
+                key={index}
+                img={product.image || "/anyday1.svg"}
+                productname={product.name}
+                productprice={`$${product.price}`}
+                productstock={`${product.stock}`}
+                productdetail={
+                  product.description || "Long Sleeve Utility Shirt, Navy, 6"
+                }
+                numsold={product.numSold?.toLocaleString() || "1,238"}
+              />
+            ))
+          ) : (
+            <p className="text-gray-500">No popular products found.</p>
+          )}
+        </div>
+      )}
     </div>
   );
 }

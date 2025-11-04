@@ -24,7 +24,7 @@ export default function RelatedProduct({
       <Image
         className="w-full bg-[#F2F2F2] rounded-[8px]"
         src={img}
-        alt="banner"
+        alt="productimage"
         width={20}
         height={20}
         priority

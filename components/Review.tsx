@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import LikeButton from "./LikeButton";
 
 interface ReviewProps {
   reviewtext: string;
@@ -80,14 +81,7 @@ export default function Review({ reviewtext, dateandtime, img, name, likenum }: 
 
         <div className="flex gap-4">
           <div className="flex items-center gap-2 border border-[#E4E9EE] py-[13px] px-[14px] rounded-[8px]">
-            <Image
-              className="w-full max-lg:w-[20px]"
-              src="/like.svg"
-              alt="like"
-              width={30}
-              height={20}
-              priority
-            />
+           <LikeButton />
             <p className="font-light max-lg:text-[12px]">{likenum}</p>
           </div>
 

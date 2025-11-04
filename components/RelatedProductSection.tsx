@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import RelatedProduct from "./RelatedProduct";
-import RelatedProductSkeleton from "./RelatedProductSkeleton"; 
+import RelatedProductSkeleton from "./RelatedProductSkeleton";
 
 interface Product {
   image: string;
@@ -13,7 +13,7 @@ interface Product {
   numSold: number;
 }
 
-export default function RelatedProductSection({ category }: { category: string }) {
+export default function RelatedProductSection() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -32,8 +32,8 @@ export default function RelatedProductSection({ category }: { category: string }
       }
     }
 
-    if (category) fetchProducts();
-  }, [category]);
+    fetchProducts();
+  }, []);
 
   return (
     <div>

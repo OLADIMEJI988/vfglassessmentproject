@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import HeartButton from "./HeartButton";
 
 export default function ProductImages() {
   return (
@@ -81,14 +82,7 @@ export default function ProductImages() {
           </div>
 
           <div className="bg-[#F2F2F2] p-3 rounded-md cursor-pointer">
-            <Image
-              className="w-[20px]"
-              src="/heart.svg"
-              alt="banner"
-              width={20}
-              height={20}
-              priority
-            />
+            <HeartButton />
           </div>
         </div>
 
