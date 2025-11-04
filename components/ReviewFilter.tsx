@@ -5,9 +5,7 @@ import Image from "next/image";
 export default function ReviewFilter() {
   return (
     <div className="flex max-lg:flex-col w-[35%] h-[640px] max-lg:hidden">
-      <div
-        className="p-6 mb-20 bg-[url('/filterbg.svg')] bg-no-repeat bg-cover rounded-[8px]"
-      >
+      <div className="p-6 mb-20 bg-[url('/filterbg.svg')] bg-no-repeat bg-cover rounded-[8px]">
         <p className="text-[#292929] text-[20px] font-semibold">
           Reviews Filter
         </p>

@@ -9,10 +9,15 @@ interface ReviewProps {
   img: string;
   name: string;
   likenum: string;
-
 }
 
-export default function Review({ reviewtext, dateandtime, img, name, likenum }: ReviewProps) {
+export default function Review({
+  reviewtext,
+  dateandtime,
+  img,
+  name,
+  likenum,
+}: ReviewProps) {
   return (
     <div className="my-[32px] font-semibold">
       <div className="flex">
@@ -64,7 +69,9 @@ export default function Review({ reviewtext, dateandtime, img, name, likenum }: 
       <p className="text-[#141414] text-[18px] max-lg:text-[14px] mt-[14px]">
         {reviewtext}
       </p>
-      <p className="text-[#818B9C] max-lg:text-[12px] font-light mt-1">{dateandtime}</p>
+      <p className="text-[#818B9C] max-lg:text-[12px] font-light mt-1">
+        {dateandtime}
+      </p>
 
       <div className="flex justify-between mt-6">
         <div className="flex gap-3 items-center">
@@ -81,7 +88,7 @@ export default function Review({ reviewtext, dateandtime, img, name, likenum }: 
 
         <div className="flex gap-4">
           <div className="flex items-center gap-2 border border-[#E4E9EE] py-[13px] px-[14px] rounded-[8px]">
-           <LikeButton />
+            <LikeButton />
             <p className="font-light max-lg:text-[12px]">{likenum}</p>
           </div>
 
