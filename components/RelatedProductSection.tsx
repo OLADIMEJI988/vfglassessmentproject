@@ -59,7 +59,7 @@ export default function RelatedProductSection() {
           ))}
         </div>
       ) : error ? (
-        <p className="text-red-500 mt-4">Failed to load products: {error}</p>
+        <p className="text-red-500 mt-4">Failed to load products</p>
       ) : products.length === 0 ? (
         <p className="text-gray-500 mt-4">No related products found.</p>
       ) : (

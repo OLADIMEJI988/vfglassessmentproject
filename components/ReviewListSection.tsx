@@ -118,6 +118,46 @@ export default function ReviewListSection() {
           <p className="text-[#666666] mt-6">No reviews found.</p>
         )}
       </div>
+
+      <div className="w-full flex justify-center items-center gap-2 text-[14px] text-[#7A7A7A] mt-10">
+        <div className="py-[11px] rotate-180 px-[5px]">
+          <Image
+            className="w-[23px]"
+            src="/nextbtn.svg"
+            alt="next"
+            width={30}
+            height={20}
+            priority
+          />
+        </div>
+
+        <div className="border border-[#333333] rounded-[8px] px-[20px] py-[11px] text-[#141414]">
+          <p>1</p>
+        </div>
+
+        <div className="border border-[#E4E9EE] rounded-[8px] px-[20px] py-[11px]">
+          <p>2</p>
+        </div>
+
+        <div className="border border-[#E4E9EE] rounded-[8px] px-[20px] py-[11px]">
+          <p className="-mt-2">...</p>
+        </div>
+
+        <div className="border border-[#E4E9EE] rounded-[8px] px-[20px] py-[11px]">
+          <p>19</p>
+        </div>
+
+        <div className="py-[11px] px-[5px]">
+          <Image
+            className="w-[23px]"
+            src="/nextbtn.svg"
+            alt="next"
+            width={30}
+            height={20}
+            priority
+          />
+        </div>
+      </div>
     </div>
   );
 }
